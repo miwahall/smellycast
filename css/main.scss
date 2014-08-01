@@ -18,6 +18,15 @@
 * {
 	margin: 0;
 	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	&:before,
+	&:after {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
 }
 
 html, body { height: 100%; }
@@ -40,12 +49,16 @@ a:visited { color: #205caa; }
 
 /* Utility */
 
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 .wrap:before,
 .wrap:after { content:""; display:table; }
 .wrap:after { clear: both; }
 .wrap {
-	max-width: 800px;
-	padding: 0 16%;
+	max-width: 600px;
 	margin: 0 auto;
 	zoom: 1;
 }
@@ -144,7 +157,44 @@ a:visited { color: #205caa; }
 	padding: 30px 0;
 	background-color: #fff;
 }
+p {
+	margin-bottom: 20px;
+}
+audio {
+	width: 100%;
+}
 
+/* Grid */
+/* ----------------------------------------------------------*/
+
+.row {
+	margin-bottom: 40px;
+	width: 100%;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.half {
+		float: left;
+		padding-right: 40px;
+		width: 50%;
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+	.third {
+		float: left;
+		width: 33.33%;
+		&.offset-third {
+			margin-left: 33.33%;
+		}
+	}
+	img {
+		width: 100%;
+	}
+}
 
 /* Home styles */
 /* ----------------------------------------------------------*/
@@ -154,13 +204,6 @@ a:visited { color: #205caa; }
 .posts { list-style-type: none; }
 
 .posts li { margin-bottom: 30px; }
-
-.posts .post-link {
-	font-family: Norwester;
-	font-size: 60px;
-	letter-spacing: -1px;
-	line-height: 1;
-}
 
 .posts .post-date {
 	display: block;
@@ -174,11 +217,12 @@ a:visited { color: #205caa; }
 
 .post-header { margin: 10px 0 30px; }
 
-.post-header h1 {
-	font-size: 42px;
-	letter-spacing: -1.75px;
+.post-header h1,
+.posts .post-link {
+	font-family: Norwester;
+	font-size: 60px;
+	letter-spacing: -1px;
 	line-height: 1;
-	font-weight: 300;
 }
 
 .post-header .meta {
