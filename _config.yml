@@ -2,8 +2,8 @@
 title: Smellycast
 email: hello@smellycast.com
 description: "Smellycast is a podcast devoted to the things interesting Mike Hall and Phil Hudson. Ranging from movies, to music, to video games and all the way down to web."
-baseurl: "http://smellycast.com"
-url: "http://smellycast.com"
+# baseurl: "http://smellycast.com"
+# url: "http://smellycast.com"
 twitter_username: miwahall
 github_username:  miwahall
 
